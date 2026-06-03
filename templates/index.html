@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} | Open Source Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">Ontri<span class="accent">Fow</span></a>
+            <nav class="nav">
+                <a href="#features">Features</a>
+                <a href="https://github.com" target="_blank" class="primary">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>
+                    Open Source<br>
+                    <span class="highlight">Made Simple</span>
+                </h1>
+                <p>A tiny Flask project for open-source contribution demos. Jump in, make your first PR, and become part of the community.</p>
+                <div class="hero-buttons">
+                    <a href="#features" class="btn btn-primary">Explore</a>
+                    <a href="https://github.com" target="_blank" class="btn btn-secondary">Contribute</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <span class="icon">🚀</span>
+                    <h3>{{ title }}</h3>
+                    <span class="badge">Ready for your PR</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title"><span>Features</span></h2>
+            <div class="features-grid">
+                {% for feature in features %}
+                <div class="feature-card">
+                    <span class="feature-number">0{{ loop.index }}</span>
+                    <span class="feature-icon">
+                        {% if loop.index == 1 %}🌍
+                        {% elif loop.index == 2 %}⚡
+                        {% else %}🎯
+                        {% endif %}
+                    </span>
+                    <h3>{{ feature }}</h3>
+                    <p>
+                        {% if loop.index == 1 %}
+                        Built for developers of all skill levels to contribute and collaborate.
+                        {% elif loop.index == 2 %}
+                        Learn the GitHub workflow — fork, branch, PR, merge, and deploy.
+                        {% else %}
+                        Perfect starting point for your first open-source contribution.
+                        {% endif %}
+                    </p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+        <div class="container">
+            <div class="stat-card">
+                <div class="stat-number">3+</div>
+                <div class="stat-label">Features</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1</div>
+                <div class="stat-label">Beginner Bug</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Open Source</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Contribute?</h2>
+            <p>Spot a typo? Found a bug? This project is built for you.</p>
+            <a href="https://github.com" target="_blank" class="btn btn-primary">Start Your PR →</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 ContriFlow — Built for the community, by the community.</p>
+            <div class="footer-links">
+                <a href="https://github.com" target="_blank">GitHub</a>
+                <a href="#">Docs</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
