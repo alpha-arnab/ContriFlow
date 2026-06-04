@@ -11,7 +11,7 @@ FEATURES = [
 @app.route('/')
 def home():
     # BUG: Typo in title (good first issue)
-    title = 'ContriFow'
+    title = 'ContriFlow'
     return render_template('index.html', title=title, features=FEATURES)
 
 if __name__ == '__main__':
